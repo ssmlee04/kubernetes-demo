@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  app1:
+    container_name: app1
+    volumes:
+      - ./app1:/usr/src/app
+    restart: always
+    ports:
+      - 3000:3000
+    build:
+      context: ./app1
+      dockerfile: Dockerfile
+  app2:
+    container_name: app2
+    volumes:
+      - ./app2:/usr/src/app
+    restart: always
+    build:
+      context: ./app2
+      dockerfile: Dockerfile
+  

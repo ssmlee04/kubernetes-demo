@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1
+  labels:
+    run: my-nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app: app1
+  ports:
+  - port: 3000
+    targetPort: 3000
